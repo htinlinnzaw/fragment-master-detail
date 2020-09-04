@@ -4,6 +4,6 @@
         android:id="@+id/some_item"
         android:icon="@android:drawable/ic_dialog_info"
         android:orderInCategory="1"
-        android:title="Some item">
+        android:title="@string/some_item">
     </item>
 </menu>

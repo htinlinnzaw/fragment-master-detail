@@ -34,7 +34,7 @@ public class MovieAdapter extends BaseAdapter {
         return movies.indexOf(getItem(position));
     }
 
-    private class ViewHolder{
+    private static class ViewHolder{
         TextView tvTitle;
         TextView tvYear;
     }

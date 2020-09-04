@@ -20,6 +20,7 @@ public class MovieDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        assert getArguments() != null;
         if (getArguments().containsKey(ARG_ITEM_POS)) {
             movie = Movie.items.get(getArguments().getInt(ARG_ITEM_POS));
         }

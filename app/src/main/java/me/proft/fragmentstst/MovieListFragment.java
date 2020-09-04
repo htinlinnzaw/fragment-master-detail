@@ -12,15 +12,18 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.ListFragment;
+
+import java.util.Objects;
 
 
 public class MovieListFragment extends ListFragment {
     MovieAdapter adapter;
 
-    static interface MovieListListener {
+    interface MovieListListener {
         void itemClicked(int pos);
-    };
+    }
 
     private MovieListListener listener;
 
@@ -37,9 +40,9 @@ public class MovieListFragment extends ListFragment {
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
-        getActivity().getMenuInflater().inflate(R.menu.movie_list_menu, menu);
+        Objects.requireNonNull(getActivity()).getMenuInflater().inflate(R.menu.movie_list_menu, menu);
     }
 
     @Override
@@ -49,13 +52,13 @@ public class MovieListFragment extends ListFragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
+    public void onAttach(@NonNull Activity activity) {
         super.onAttach(activity);
         this.listener = (MovieListListener)activity;
     }
 
     @Override
-    public void onListItemClick(ListView l, View v, int position, long id) {
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
         Movie item = Movie.items.get(position);
 
         Toast.makeText(getActivity(), item.getTitle(), Toast.LENGTH_SHORT).show();
@@ -68,13 +71,11 @@ public class MovieListFragment extends ListFragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // handle item selection
-        switch (item.getItemId()) {
-            case R.id.some_item:
-                Toast.makeText(getActivity(), "Some action", Toast.LENGTH_LONG).show();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.some_item) {
+            Toast.makeText(getActivity(), "Some action", Toast.LENGTH_LONG).show();
+            return true;
         }
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -8,7 +8,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity implements MovieListFragment.MovieListListener {
-    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements MovieListFragment
         setContentView(R.layout.activity_main);
 
         // creating toolbar and setting it as actionbar for the activity
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(" IMDB");
         toolbar.setLogo(android.R.drawable.ic_dialog_info);
         toolbar.setTitleTextColor(0xFFFFFFFF);
