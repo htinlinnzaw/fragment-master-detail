@@ -52,12 +52,6 @@ public class MovieListFragment extends ListFragment {
     }
 
     @Override
-    public void onAttach(@NonNull Activity activity) {
-        super.onAttach(activity);
-        this.listener = (MovieListListener)activity;
-    }
-
-    @Override
     public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
         Movie item = Movie.items.get(position);
 

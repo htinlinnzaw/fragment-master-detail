@@ -31,7 +31,7 @@ public class MovieDetailFragment extends Fragment {
         View v = inflater.inflate(R.layout.movie_detail_fragment, container, false);
 
         if (movie != null) {
-            TextView tvTitle = (TextView)v.findViewById(R.id.tvTitle);
+            TextView tvTitle = v.findViewById(R.id.tvTitle);
             tvTitle.setText(movie.getTitle());
 
             TextView tvYear = (TextView)v.findViewById(R.id.tvYear);
