@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FragmentsTst.iml" filepath="$PROJECT_DIR$/FragmentsTst.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MasterDetailAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/MasterDetailAndroid.iml" group="MasterDetailAndroid" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/MasterDetailAndroid-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/MasterDetailAndroid-app.iml" group="MasterDetailAndroid/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
